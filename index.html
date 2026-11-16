@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vũ Anh Đức | Trang web cá nhân</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #10151a;
+      --card: #1c2730;
+      --text: #f4f1ea;
+      --muted: #b7c0c5;
+      --accent: #d7ad70;
+      --accent-light: #f0d29e;
+      --line: rgba(255,255,255,0.09);
+      --shadow: 0 20px 50px rgba(0,0,0,0.28);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Be Vietnam Pro", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(215,173,112,0.08), transparent 30%),
+        linear-gradient(180deg, #10151a 0%, #131b21 45%, #0e1418 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+  
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(12,17,21,0.97), rgba(24,34,41,0.92)),
+        radial-gradient(circle at 20% 20%, rgba(215,173,112,0.09), transparent 32%);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 70px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 60px 0;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-image {
+      width: min(100%, 470px);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+      background: linear-gradient(145deg, #34424c, #182129);
+    }
+
+    .image-note {
+      position: absolute;
+      left: 35px;
+      bottom: -17px;
+      background: rgba(16,21,26,0.9);
+      border: 1px solid var(--line);
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .eyebrow {
+      color: var(--accent-light);
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .hello {
+      font-family: "Pacifico", cursive;
+      font-size: clamp(46px, 7vw, 88px);
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: clamp(23px, 3.2vw, 38px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 640px;
+      font-size: 16px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1a1714;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: var(--accent-light);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-3px);
+    }
+
+ 
+
+    section {
+      padding: 90px 0;
+      scroll-margin-top: 30px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-heading .mini {
+      color: var(--accent-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+ 
+
+    #thong-tin > .container {
+      width: calc(100% - 100px);
+      max-width: none;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      background: linear-gradient(160deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.25s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(215,173,112,0.28);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+    }
+
+    .question {
+      background: linear-gradient(135deg, #283943, #22303a);
+      padding: 24px 20px;
+      font-weight: 800;
+      color: var(--accent-light);
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+    }
+
+    .answer {
+      padding: 28px 20px;
+      color: var(--muted);
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .answer em {
+      color: #7f8b91;
+    }
+
+    
+    .memories {
+      background: rgba(255,255,255,0.018);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .memory-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      min-height: 280px;
+      background: linear-gradient(135deg, #33434e, #1a232a);
+      border: 1px solid var(--line);
+    }
+
+    .memory-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      display: block;
+      opacity: 0.75;
+    }
+
+    .memory-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 24px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.88));
+    }
+
+    .memory-overlay h3 {
+      margin-bottom: 5px;
+    }
+
+    .memory-overlay p {
+      color: #d0d4d6;
+      font-size: 14px;
+    }
+
+    .school-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .school-card {
+      padding: 30px;
+      min-height: 230px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(215,173,112,0.12), transparent 32%),
+        linear-gradient(155deg, #1c2730, #151d23);
+      transition: 0.25s ease;
+    }
+
+    .school-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(215,173,112,0.34);
+    }
+
+    .school-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: rgba(215,173,112,0.12);
+      color: var(--accent-light);
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .school-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .school-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 40px;
+      border-top: 1px solid var(--line);
+      color: #89949a;
+      font-size: 13px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 980px) {
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .hero-image {
+        width: min(100%, 430px);
+      }
+
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .memory-grid,
+      .school-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero-content {
+        padding: 40px 0 70px;
+      }
+
+      .hello {
+        font-size: 52px;
+      }
+
+      #thong-tin > .container {
+        width: calc(100% - 32px);
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .image-note {
+        left: 15px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+ 
+
+  <header class="hero">
+
+<div class="container hero-content">
+
+  <div class="hero-image-wrap">
+
+
+    <img
+      class="hero-image"
+      src="me.jpg"
+      alt="Ảnh đại diện của Vũ Anh Đức"
+    >
+
+    <div class="image-note">
+      Ảnh của mình
+    </div>
+
+  </div>
+
+  <div>
+
+    <div class="eyebrow">
+      PERSONAL WEBSITE
+    </div>
+
+    <div class="hello">
+      Xin chào
+    </div>
+
+    <h2>
+      Chào mừng đến với trang web cá nhân của Vũ Anh Đức
+    </h2>
+
+    <p class="hero-description">
+      Đây là trang web chứa một vài thông tin thú vị của mình,
+      những khoảnh khắc đáng nhớ và những ngôi trường mà mình
+      mong muốn được theo học trong tương lai.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a class="btn btn-primary" href="#thong-tin">
+        Khám phá về mình ↓
+      </a>
+
+      <a class="btn btn-secondary" href="#truong-mo-uoc">
+        Xem trường mơ ước
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </header>
+
+
+
+  <section id="thong-tin">
+
+<div class="container">
+
+  <div class="section-heading">
+
+    <div class="mini">
+      ABOUT ME
+    </div>
+
+    <h2>
+      Thông tin cá nhân
+    </h2>
+
+    <p>
+      Một vài câu hỏi nhỏ để mọi người hiểu thêm về mình.
+    </p>
+
+  </div>
+
+
+  <div class="info-grid">
+
+    <article class="info-card">
+
+      <div class="question">
+        Nơi tôi sinh ra?
+      </div>
+
+      <div class="answer">
+        <em>
+         Hạ long, Quảng Ninh - nơi nổi tiếng với du lịch
+        </em>
+      </div>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <div class="question">
+        Tôi là người như thế nào?
+      </div>
+
+      <div class="answer">
+        <em>
+          Một người khá ngại ngùng trước người lạ, nhưng lại vui vẻ với bạn bè
+        </em>
+      </div>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <div class="question">
+        Tôi có sở thích gì?
+      </div>
+
+      <div class="answer">
+        <em>
+          Mình thích chơi game hoặc chỉ đơn giản là ngủ
+        </em>
+      </div>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <div class="question">
+        Môn học yêu thích của tôi?
+      </div>
+
+      <div class="answer">
+        <em>
+          Mình không có môn học yêu thích cụ thể nhưng môn học mình học tốt nhất là toán và vật lí
+        </em>
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+
+  </section>
+
+  
+
+  <section class="memories" id="khoanh-khac">
+
+<div class="container">
+
+  <div class="section-heading">
+
+    <div class="mini">
+      MEMORIES
+    </div>
+
+    <h2>
+      Vài khoảnh khắc đáng nhớ
+    </h2>
+
+    <p>
+      Những kỷ niệm mà mình muốn lưu giữ trên trang web cá nhân.
+    </p>
+
+  </div>
+
+
+  <div class="memory-grid">
+
+    <article class="memory-card">
+
+      <img
+        src="MEMO1.jpg"
+        alt="Khoảnh khắc đáng nhớ 1"
+      >
+
+      <div class="memory-overlay">
+
+        <h3>
+          Chuyến đi bảo tàng quân sự
+        </h3>
+       
+      </div>
+
+    </article>
+
+
+    <article class="memory-card">
+
+      <img
+        src="MEMO2.jpg"
+        alt="Khoảnh khắc đáng nhớ 2"
+      >
+
+      <div class="memory-overlay">
+
+        <h3>
+          Gặp nhau cuối năm
+        </h3>
+      
+
+      </div>
+
+    </article>
+
+
+    <article class="memory-card">
+
+      <img
+        src="MEMO3.jpg"
+        alt="Khoảnh khắc đáng nhớ 3"
+      >
+
+      <div class="memory-overlay">
+
+        <h3>
+          Cái cây biết đi
+        </h3>
+       
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+
+  </section>
+
+  <!-- ================= TRƯỜNG MƠ ƯỚC ================= -->
+
+  <section id="truong-mo-uoc">
+
+<div class="container">
+
+  <div class="section-heading">
+
+    <div class="mini">
+      MY DREAM SCHOOLS
+    </div>
+
+    <h2>
+      Ngôi trường mơ ước của tôi
+    </h2>
+
+    <p>
+      Ba ngôi trường mà mình hướng tới trong tương lai.
+    </p>
+
+  </div>
+
+
+  <div class="school-grid">
+
+
+    <article class="school-card">
+
+      <div class="school-number">
+        01
+      </div>
+
+      <h3>
+        Đại học Bách khoa Hà Nội
+      </h3>
+
+      <p>
+        Một trong những ngôi trường mà mình mong muốn được theo học.
+      </p>
+
+    </article>
+
+
+    <article class="school-card">
+
+      <div class="school-number">
+        02
+      </div>
+
+      <h3>
+        Trường Đại học Công nghệ
+      </h3>
+
+      <p>
+        Nơi mình hướng tới để phát triển kiến thức và kỹ năng công nghệ.
+      </p>
+
+    </article>
+
+
+    <article class="school-card">
+
+      <div class="school-number">
+        03
+      </div>
+
+      <h3>
+        Học viện Kỹ thuật
+      </h3>
+
+      <p>
+        Một lựa chọn khác mà mình muốn chinh phục trong tương lai.
+      </p>
+
+    </article>
+  </div>
+
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lh3zs9YHqAM?si=acvgb3P0Xs8SU1aY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"style="width: 100%;max-width: 1100px; aspect-ratio: 16 / 9; height: auto; border: none;display: block; margin: 0 auto;margin-top: 24px;" 
+        allowfullscreen></iframe>
+  </section>
+  <footer>     © 2026 Vũ Anh Đức — Trang web cá nhân   </footer>
+
+</body> </html>
